@@ -1,0 +1,20 @@
+{
+  "routes": [
+    "/",
+    "/admision_page",
+    "/admision_receipt_page",
+    "/course_page",
+    "/delete_profile_confirm_page",
+    "/forget_password_page",
+    "/login_page",
+    "/navigation_page",
+    "/payment_page",
+    "/profile_page",
+    "/register_page",
+    "/result_page",
+    "/score_page",
+    "/test_home_page",
+    "/test_page",
+    "/update_page"
+  ]
+}
