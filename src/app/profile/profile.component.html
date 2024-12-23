@@ -1,0 +1,122 @@
+<div class="container " style="padding-top: 5px;">
+    <div align="center">
+<button routerLink="/">Go Bock</button>
+</div>
+
+</div>
+
+<div *ngIf="loading" >Loading profile...</div>
+
+<div *ngIf="!loading" align="center" style="justify-content: center;">
+  <div *ngIf="errorMessage; else profileDetails">
+    <p class="error">{{ errorMessage }}</p>
+  </div>
+
+  <ng-template #profileDetails>
+    <div align="center" style="margin-top: 10%;margin-bottom: 10%;">
+      <div class="card w-50 ">
+          <div style="padding-top:10px ;padding-bottom: 10px;">
+          <h4 class="title">Profile !</h4><br>
+          <form>
+              <label class="field" for="logemail">
+                  
+                  <input
+                  disabled
+                    autocomplete="off"
+                    id="first_name"
+                    placeholder="First Name"
+                    class="input-field"
+                    name="first_name"
+                 
+                    [(ngModel)]="first_name"
+                  />
+                </label>
+  
+                <label class="field" for="logemail">
+               
+                  <input
+                    disabled
+                    autocomplete="off"
+                    id="last_name"
+                    placeholder="Last Name"
+                    class="input-field"
+                    name="last_name"
+                   
+                    [(ngModel)]="last_name"
+                  />
+                </label>
+
+                <label class="field" for="logpass">
+                  <span><i class="fas fa-phone input-icon" ></i></span>
+            
+                  <input
+                    id="phone_number"
+                    placeholder="Phone number"
+                    class="input-field"
+                    name="phone_number"
+                    type="number"
+                    [(ngModel)]="phone_number"
+                    disabled
+                  />
+                </label>
+                
+            <label class="field" for="logemail">
+              <span class="input-icon">&#64;</span>
+              <input
+                disabled
+                autocomplete="off"
+                id="logemail"
+                placeholder="Email"
+                class="input-field"
+                name="logemail"
+                type="email"
+                [(ngModel)]="email"
+              />
+            </label>
+            
+           
+            
+            
+            <br>
+            <button class="btn" type="button" routerLink="/update_page">Update</button>
+            <button class="btn" type="button" (click)="logout()">Log Out !</button>
+            <button class="btn" type="button" (click)="open_modal()">Delete Profile !</button>
+            <br>
+          
+          </form>
+          </div>
+        </div>
+
+        <!--modal conform delete -->
+        <div
+    
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}"> 
+<div class="modal-dialog" role="document" style="background-color: aqua;"> 
+	<div class="modal-content" style="background-color: rgb(167, 167, 167);"> 
+	
+	<div class="modal-body"> 
+		<p>Are you sure you want to delete your profile ?</p> 
+
+	</div> 
+	<div class="modal-footer"> <button type="button" class="btn btn-danger"
+    (click)="closePopup()"> 
+cancel 
+</button> 
+		<button type="button" class="btn btn-danger"
+				(click)="delete_profile()"> 
+		Delete
+		</button> 
+	</div> 
+	</div> 
+</div> 
+</div>
+        <!--modal close here-->
+        
+  </div>
+  </ng-template>
+</div>
+
+

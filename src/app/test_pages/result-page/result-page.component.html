@@ -1,0 +1,16 @@
+<!-- modal.component.html -->
+<div class="modal fade" tabindex="-1" role="dialog" [ngClass]="{'show': isVisible}" [style.display]="isVisible ? 'block' : 'none'">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">Are you sure?
+       
+        <div class="modal-body">
+            Do you want to proceed with this action?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="saveChanges()">Conform</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

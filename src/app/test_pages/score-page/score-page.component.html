@@ -1,0 +1,82 @@
+<div align="center" style="margin-top: 5px;">
+    <!-- Back Button -->
+    <button routerLink="/" class="btn btn-secondary" style="margin-bottom: 10px;">Back</button>
+</div>
+
+<div style="margin-top: 20px;" align="center">
+    <!-- Card -->
+    <div class="card" style="margin-inline: 10%; background-color: rgb(231, 231, 231);">
+        <!-- Card Header -->
+        <div style="padding-bottom: 10px;">
+            <h3 class="text-center" style="color: rgb(32, 32, 35); padding-top: 10px;">ExamHub</h3>
+            <hr>
+
+            <!-- Card Body with Grid Layout -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Left Side Information -->
+                    <div class="col-6">
+                        <label for="student-name">Student Name :</label><b>{{data.first_name}} {{data.last_name}}</b>
+                        <br>
+                        <label for="student-email">Student Email :</label><b>{{data.email}}</b>
+                        <br>
+                    </div>
+
+                    <!-- Right Side Information -->
+                    <div class="col-6 text-right">
+                        <label for="student-name">Contact Number :</label><b>{{data.phone_number}}</b>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table with Center Alignment -->
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <table border="2px" style="width: 80%; text-align: center; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Questions</th>
+                            <th>You Selected Answer</th>
+                            <th>Obtained Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Question 1</td>
+                            <td>{{data.first_answer}}</td>
+                            <td>{{marks1}}</td>
+                        </tr>
+                        <tr>
+                            <td>Question 2</td>
+                            <td>{{data.second_answer}}</td>
+                            <td>{{marks2}}</td>
+                        </tr>
+                        <tr>
+                            <td>Question 3</td>
+                            <td>{{data.third_answer}}</td>
+                            <td>{{marks3}}</td>
+                        </tr>
+                        <tr>
+                            <td>Question 4</td>
+                            <td>{{data.fourth_answer}}</td>
+                            <td>{{marks4}}</td>
+                        </tr>
+                        <tr>
+                            <td>Question 5</td>
+                            <td>{{data.fifth_answer}}</td>
+                            <td>{{marks5}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pass/Fail Button -->
+            <div style="margin-top: 10px;" *ngIf="passorfail">
+                <button type="button" class="btn btn-success btn-lg" disabled>Pass</button>
+            </div>
+            <div *ngIf="!passorfail" style="margin-top: 10px;">
+                <button type="button" class="btn btn-danger btn-lg" disabled>Fail</button>
+            </div>
+        </div>
+    </div>
+</div>
